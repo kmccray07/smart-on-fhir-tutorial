@@ -1,5 +1,3 @@
-import FHIR from "fhirclient"
-
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
