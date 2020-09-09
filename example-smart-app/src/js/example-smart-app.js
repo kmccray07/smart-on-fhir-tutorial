@@ -67,6 +67,7 @@
       }
     }
 
+    FHIR.oauth2.settings.fullSessionStorageSupport = false;
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
