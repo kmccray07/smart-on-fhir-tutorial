@@ -1,3 +1,5 @@
+import FHIR from "fhirclient"
+
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
@@ -69,9 +71,11 @@
 
     FHIR.oauth2.settings.fullSessionStorageSupport = false;
     //FHIR.oauth2.ready(onReady, onError);
-    FHIR.oauth2.ready().then(async function (client) {  onReady;  
-                                                     
-                                                     })
+    FHIR.oauth2.ready()
+    .then(smart => smart.request("Patient"))
+    .then(onReady)
+    .catch(onError);
+    
     return ret.promise();
 
   };
