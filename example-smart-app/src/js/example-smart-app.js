@@ -7,7 +7,7 @@
       ret.reject();
     }
 
-    function onReady(smart)  {
+    FHIR.oauth2.ready(function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -65,9 +65,9 @@
       } else {
         onError();
       }
-    }
+    });
 
-    FHIR.oauth2.ready(onReady, onError);
+    //FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
   };
