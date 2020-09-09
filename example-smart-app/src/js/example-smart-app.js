@@ -72,7 +72,6 @@ import FHIR from "fhirclient"
     FHIR.oauth2.settings.fullSessionStorageSupport = false;
     //FHIR.oauth2.ready(onReady, onError);
     FHIR.oauth2.ready()
-    .then(smart => smart.request("Patient"))
     .then(onReady)
     .catch(onError);
     
